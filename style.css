@@ -1,0 +1,120 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Poppins:ital,wght@0,100;0,300;0,500;0,700;0,900;1,100;1,300;1,500;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300&display=swap');
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body {
+    font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* tabs */
+.tabs {
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 900px;
+    width: 80%;
+    margin: 1rem auto;
+}
+
+.tabs_title {
+    font-size: 2rem;
+    padding: 1rem 0;
+    cursor: pointer;
+    margin: 1.5rem auto;
+    transition: letter-spacing .5s ease-in-out;
+}
+
+.tabs_title::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #111;
+    transition: width .5s ease-in-out;
+    
+}
+
+.tabs_title:hover {
+    letter-spacing: 5px;
+}
+
+.tabs_title:hover::after {
+    width: 100%;
+}
+
+.tabs_menu {
+    display: flex;
+}
+
+.tabs_menu > li {
+    background: #ccc;
+    padding: 1rem;
+    border-top: 1px solid #555;
+    border-left: 1px solid #555;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    margin-bottom: -1px;
+    z-index: 1;
+}
+
+.tabs_menu > li:last-child {
+    border-right: 1px solid #555;
+}
+
+.tabs_menu li.active {
+    background: #eee;
+}
+
+.tabs_content {
+   border: 1px solid #555;
+   padding: 1rem 1rem;
+}
+
+.tabs_content p {
+    font-weight: normal;
+}
+
+/* small devices */
+@media screen and (max-width: 768px) {
+    .tabs_menu {
+        flex-flow: column wrap;
+    }
+
+    .tabs_menu li {
+        border-right: 1px solid #555;
+        transition: width .5s linear;
+    }
+
+    .tabs_menu li {
+        width: 100%;
+    }
+
+    .tabs_menu li.active:hover {
+        width: 50%;
+    }
+
+    .tabs_menu li.active > a {
+        transition: font-size .5s linear;
+    }
+
+    .tabs_menu li.active:hover > a {
+        padding-left: 0;
+        font-size: .6rem;
+    }
+}
+
+
